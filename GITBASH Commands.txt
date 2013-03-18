@@ -1,0 +1,71 @@
+GIT COMMANDS
+
+git commit -a 				--> commits all your changes before pushing
+git push 				--> pushes to remote repo
+git checkout [name]			--> switches branches
+git clone [ssh url] [destination path]	--> installs plugin
+
+To merge, go to
+git checkout master
+git merge
+
+for Git Ignore
+# Ignore everything
+*
+
+# But not these files...
+!script.pl
+!template.latex
+# etc...
+
+push to cloud control
+cctrlapp [application name]/[deploy] push
+cctrlapp [application name]/[deploy] deploy
+
+If got error like:
+"unable to update local refs"
+
+then just go to .git/refs/remote/origin and remove the offending file
+then git fetch and merge to see if fixed
+
+To allow the use of openSSL in xampp php, edit php.ini and add 
+extension=php_openssl.dll
+to Dynamic Extensions
+
+Whenever pull has migration changes
+1. Run Migrations
+2. Restore DB
+
+Whenever I generate new controller actions and permissions
+1. Run aco_sync
+2. Run Console/Cake ArosExtras aro_reset
+3. Run Console/Cake PermissionsExtras permissions_reset
+OR Chain them up:
+Console/cake AclExtras.AclExtras aco_sync && Console/Cake ArosExtras aro_reset && Console/Cake PermissionsExtras permissions_reset
+
+APP LEVEL COMMANDS
+
+Console/Cake Bake 			--> Bakes MVC
+Console/Cake test app Model/[modelname]	--> runs tests
+
+
+PLUGIN COMMANDS
+
+Composer:
+SSH URL: git@github.com:uzyn/cakephp-composer.git
+Navigate to App folder
+console/cake composer.c update -y --> Updates Composer
+
+Migrations:
+SSH URL: 
+Navigate to App folder
+console/cake Migrations.migration run all 	--> Updates db
+console/cake Migrations.migration run down	--> reverts to last change
+console/cake Migrations.migration run up	--> executes the next change
+console/cake Migrations.migration generate -f	--> "commits" db structure changes
+*always compare and overwrite*
+
+AclExtras:
+SSH URL: 
+Navigate to App folder
+Console/cake AclExtras.AclExtras aco_sync --> Syncs the db with the latest permissions

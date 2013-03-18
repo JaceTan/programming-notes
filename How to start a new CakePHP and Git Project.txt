@@ -1,0 +1,13 @@
+1. copy cakephp to your folder
+2. run lib/cake/console/cake bake
+3. rename your app (spell out the whole path)
+4. set up your database connection
+5. do a git init
+6. Create a remote repo on github
+7. git add .
+8. git commit -a (initial commit)
+9. git remote add origin [ssh]
+10. git pull origin master
+11. git push origin master
+12. create your database with the same name defined in step 4
+13. bake MVCs

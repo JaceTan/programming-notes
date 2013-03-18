@@ -1,0 +1,74 @@
+acl access control list
+
+aco ->something that's wanted
+aro ->wants something
+
+1. create table users with 
+id 		int	unsigned	AI, PK
+email		varchar	255		unique index key=>UNIQUE_EMAIL
+password	varchar 255
+group_id	int	unsigned
+created		datetime
+modified	datetime
+
+2. Generate Migrations
+
+3. Create groups table with
+id 		int	unsigned	AI, PK
+name		varchar	50		unique index key=>UNIQUE_NAME
+created		datetime
+modified	datetime
+
+4. Generate Migrations
+
+5. Create the acos, aros, and acos_aros tables
+console/cake schema create DbAcl
+
+6. Add to app_controller components
+public $components = array('Acl');
+
+7. bake MVC for Users and Groups (never bake Acl tables)
+Users belongsTo Groups
+
+Groups hasMany Users
+
+8. Add in parentNode method to User and Group models
+http://book.cakephp.org/2.0/en/tutorials-and-examples/simple-acl-controlled-application/simple-acl-controlled-application.html#acts-as-a-requester
+
+copy from public $actsAs
+to User model
+
+do the same for Group model
+
+9. Authentication
+http://book.cakephp.org/2.0/en/tutorials-and-examples/simple-acl-controlled-application/simple-acl-controlled-application.html#preparing-to-add-auth
+
+follow this link, add to UsersController
+Change login.ctp file "username" to "email"
+
+Add the isset for beforeSave for user.password 
+
+Add the Auth Component, helpers and beforeFilter
+change $this->Auth->loginRedirect-> '/';
+
+
+10. Add groups
+localhost/[app_name]/groups/add
+plural
+snake_style
+
+administrators
+sales_managers
+
+once done, comment out $this->Auth->allow(); in the GroupController
+
+11. Add users
+localhost/[app_name]/users/add
+or click New User
+
+add yourself (at least, cuz you're the administrator)
+
+12. Add GROUP-ONLY Acl
+http://book.cakephp.org/2.0/en/tutorials-and-examples/simple-acl-controlled-application/simple-acl-controlled-application.html#group-only-acl
+Copy the bindNode to User model
+

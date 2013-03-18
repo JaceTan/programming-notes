@@ -1,0 +1,24 @@
+Naming Conventions
+
+table names -> snake_style, plural eg. das_ftk_products, prices
+field names -> snake_style, PK = id, FK = [singular table name]_id eg das_ftk_product_id
+
+php variables -> camelCase
+public functions -> camelCase, always start with verb
+protected functions -> _camelCase, always start with verb
+private functions -> __camelCase, always start with verb
+
+public function doSomthing(){
+
+}
+
+protected function _doSomthing(){
+
+}
+
+private function __doSomthing(){
+
+}
+
+view related files are all snake_style except Helpers, which are CamelCase
+
