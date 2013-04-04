@@ -1,0 +1,16 @@
+1. git submodule add [ssh] [folder relative path]
+2. commit and push
+
+To Update
+1. git submodule update --init --recursive
+--init means initialize
+--recursive means pull the submodule's dependencies and their dependencies
+
+If want to delete a submodule
+1. Manually delete the folder
+2. Edit .gitmodules --> delete the submodule section
+3. Edit .git/config (?)
+4. Commit and push
+
+Check status
+git submodule status
