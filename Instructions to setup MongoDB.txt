@@ -1,0 +1,17 @@
+1. Go to github https://github.com/ichikaway/cakephp-mongodb/
+2. Submodule add it into [app]/Plugin/Mongodb
+3. Go to Config/database.php and follow this -> https://github.com/ichikaway/cakephp-mongodb/#sample-code
+4. Download mongodb from http://www.mongodb.org/downloads
+5. Move it to C:\mongodb
+6. In the same level, create a folder called data and a subfolder called db
+7. Execute it from the command prompt command: C:\mongodb\bin\mongod.exe and allow access to private networks only
+8. Download https://github.com/mongodb/mongo-php-driver/downloads
+9. copy out the correct .dll file to xampp/php/ext and rename to php_mongo.dll
+10. Move one level up and edit php.ini to include the extension of
+; we ownself install mongodb
+extension=php_mongo.dll
+11. go to rockmongo.com/downloads and download the first one
+12. extract the rockmongo folder to htdocs
+13. go to http://localhost/rockmongo/ and use 'admin' for username and password
+
+Run step 7 everytime we use mongo.
