@@ -1,0 +1,8 @@
+1. git clone [ssh] [relative path to destination folder]
+2. git branch -l
+   notice that you only have master branch
+3. go in and do a git fetch origin [branch name]
+4. git checkout -b [branch name]
+5. git merge origin/[branch name]
+6. git branch -l
+   notice that you now have the new branch.
